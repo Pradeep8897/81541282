@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int myArray[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int arrayLength = sizeof(myArray) / sizeof(myArray[0]);
+printf("\nname:pradeep");
+printf("\nreg no:192324052");
+    if (arrayLength > 4) {
+        int fifthIteratedElement = myArray[4];
+        printf("\nThe 5th iterated element is: %d\n", fifthIteratedElement);
+    } else {
+        printf("The array does not have enough elements for the 5th iteration.\n");
+    }
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-21 220057.png
