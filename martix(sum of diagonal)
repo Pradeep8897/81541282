@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int mat[3][3];
+    int sum = 0;
+printf("\nname:pradeep");
+printf("\nreg no:192324052");
+    printf("\nEnter elements of a 3x3 matrix:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            scanf("%d", &mat[i][j]);
+        }
+    }
+
+    for (int i = 0; i < 3; i++) {
+        sum += mat[i][i]; // Add diagonal elements (i, i)
+    }
+
+    printf("Sum of diagonal elements: %d\n", sum);
+
+    return 0;
+}
+C:\Users\kusha\OneDrive\Pictures\IMG-20231221-WA0007.jpg
