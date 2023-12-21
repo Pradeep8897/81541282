@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+void deleteElement(int arr[], int size, int index) {
+    if (index >= size || index < 0) {
+        printf("Invalid index\n");
+        return;
+    }
+
+    for (int i = index; i < size - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+
+    size--;
+
+    printf("\nElement at index %d deleted successfully\n", index);
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int index = 2;
+printf("\nname:pradeep");
+printf("\nreg no:192324052");
+    printf("\nOriginal Array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    deleteElement(arr, size, index);
+
+    printf("Array after deletion: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-21 133830.png
