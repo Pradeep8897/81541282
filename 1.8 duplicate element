@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+void findDuplicates(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                printf("Duplicate element found: %d\n", arr[i]);
+            }
+        }
+    }
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 2, 4, 6, 7, 8, 9, 1};
+    int size = sizeof(arr) / sizeof(arr[0]);
+printf("\nname:pradeep");
+printf("\nreg no:192324052");
+    printf("\nDuplicate elements in the array:\n");
+    findDuplicates(arr, size);
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-21 134638.png
