@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int element = 30;
+    int location = -1;
+printf("\nname:pradeep");
+printf("\nreg no:192324052");
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == element) {
+            location = i;
+            break;
+        }
+    }
+
+    printf("\nThe element %d is located at index %d in the array.", element, location);
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-21 211921.png
