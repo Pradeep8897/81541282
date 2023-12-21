@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int compare(const void *a, const void *b) {
+    return (*(char *)a - *(char *)b);
+}
+
+int main() {
+    char arr[] = {'d', 'b', 'a', 'c', 'e'};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    qsort(arr, n, sizeof(char), compare);
+printf("\nname:pradeep");
+printf("\nreg no:192324052");
+    printf("\nCharacters in ascending alphabetical order: ");
+    for (int i = 0; i < n; i++) {
+        printf("%c ", arr[i]);
+    }
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-21 213211.png
