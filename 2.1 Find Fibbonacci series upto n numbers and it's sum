@@ -2,15 +2,17 @@
 
 int fibonacci(int n) {
     if (n <= 1) {
-        return n; // Base case: return n if n <= 1
+        return n; 
     } else {
-        return fibonacci(n - 1) + fibonacci(n - 2); // Recursively calculate Fibonacci series
+        return fibonacci(n - 1) + fibonacci(n - 2); 
     }
 }
 
 int main() {
     int num;
-    printf("Enter the number of terms for the Fibonacci series: ");
+    printf("\nname:pradeep");
+    printf("\nreg no:192324052");
+    printf("\nEnter the number of terms for the Fibonacci series: ");
     scanf("%d", &num);
 
     if (num <= 0) {
@@ -25,3 +27,4 @@ int main() {
 
     return 0;
 }
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-26 125535.png
