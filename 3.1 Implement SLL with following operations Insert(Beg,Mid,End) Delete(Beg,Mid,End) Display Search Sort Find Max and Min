@@ -1,0 +1,183 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* next;
+};
+void insertAtBeginning(struct Node** head, int newData) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = newData;
+    newNode->next = *head;
+    *head = newNode;
+}
+void insertAtMiddle(struct Node* prevNode, int newData) {
+    if (prevNode == NULL) {
+        printf("Previous node cannot be NULL");
+        return;
+    }
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = newData;
+    newNode->next = prevNode->next;
+    prevNode->next = newNode;
+}
+void insertAtEnd(struct Node** head, int newData) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    struct Node* last = *head;
+    newNode->data = newData;
+    newNode->next = NULL;
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+    while (last->next != NULL) {
+        last = last->next;
+    }
+    last->next = newNode;
+}
+void deleteFromBeginning(struct Node** head) {
+    if (*head == NULL) {
+    	printf("\nname:pradeep");
+    	printf("\nreg no:192324052");
+        printf("\nLinked list is already empty");
+        return;
+    }
+    struct Node* temp = *head;
+    *head = (*head)->next;
+    free(temp);
+}
+void deleteFromMiddle(struct Node* prevNode) {
+    if (prevNode == NULL || prevNode->next == NULL) {
+        printf("Previous node cannot be NULL or last node");
+        return;
+    }
+    struct Node* temp = prevNode->next;
+    prevNode->next = temp->next;
+    free(temp);
+}
+void deleteFromEnd(struct Node** head) {
+    if (*head == NULL) {
+        printf("Linked list is already empty");
+        return;
+    }
+    struct Node* last = *head;
+    struct Node* secondLast = NULL;
+    while (last->next != NULL) {
+        secondLast = last;
+        last = last->next;
+    }
+    if (secondLast == NULL) {
+        *head = NULL;
+    } else {
+        secondLast->next = NULL;
+    }
+    free(last);
+}
+void display(struct Node* head) {
+    struct Node* current = head;
+    while (current != NULL) {
+        printf("%d ", current->data);
+        current = current->next;
+    }
+    printf("\n");
+}
+int search(struct Node* head, int value) {
+    struct Node* current = head;
+    int index = 0;
+    while (current != NULL) {
+        if (current->data == value) {
+            return index;
+        }
+        current = current->next;
+        index++;
+    }
+    return -1;
+}
+void sort(struct Node** head) {
+    struct Node* current = *head;
+    struct Node* index = NULL;
+    int temp;
+    if (*head == NULL) {
+        return;
+    } else {
+        while (current != NULL) {
+            index = current->next;
+            while (index != NULL) {
+                if (current->data > index->data) {
+                    temp = current->data;
+                    current->data = index->data;
+                    index->data = temp;
+                }
+                index = index->next;
+            }
+            current = current->next;
+        }
+    }
+}
+int findMax(struct Node* head) {
+    if (head == NULL) {
+        printf("Linked list is empty");
+        return -1;
+    }
+    int max = head->data;
+    struct Node* current = head->next;
+    while (current != NULL) {
+        if (current->data > max) {
+            max = current->data;
+        }
+        current = current->next;
+    }
+    return max;
+}
+int findMin(struct Node* head) {
+    if (head == NULL) {
+        printf("Linked list is empty");
+        return -1;
+    }
+    int min = head->data;
+    struct Node* current = head->next;
+    while (current != NULL) {
+        if (current->data < min) {
+            min = current->data;
+        }
+        current = current->next;
+    }
+    return min;
+}
+int main() {
+    struct Node* head = NULL;
+    insertAtBeginning(&head, 5);
+    insertAtBeginning(&head, 10);
+    insertAtBeginning(&head, 15);
+    struct Node* middleNode = head->next;
+    insertAtMiddle(middleNode, 20);
+    insertAtMiddle(middleNode, 25);
+    insertAtEnd(&head, 30);
+    insertAtEnd(&head, 35);
+    printf("\nname:pradeep");
+    	printf("\nreg no:192324052");
+    printf("\nLinked List: ");
+    display(head);
+    deleteFromBeginning(&head);
+    deleteFromBeginning(&head);
+    deleteFromMiddle(middleNode);
+    deleteFromEnd(&head);
+    printf("Linked List after deletion: ");
+    display(head);
+    int searchValue = 20;
+    int searchIndex = search(head, searchValue);
+    if (searchIndex != -1) {
+        printf("%d found at index %d\n", searchValue, searchIndex);
+    } else {
+        printf("%d not found in the linked list\n", searchValue);
+    }
+    sort(&head);
+    printf("Linked List after sorting: ");
+    display(head);
+    int maxValue = findMax(head);
+    printf("Maximum value in the linked list: %d\n", maxValue);
+    int minValue = findMin(head);
+    printf("Minimum value in the linked list: %d\n", minValue);
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-26 134536.png
