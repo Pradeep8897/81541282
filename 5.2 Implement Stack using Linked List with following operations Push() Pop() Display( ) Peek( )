@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* next;
+};
+struct Node* top = NULL;
+void push(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Memory allocation failed. Cannot push element %d\n", value);
+        return;
+    }
+    newNode->data = value;
+    newNode->next = top;
+    top = newNode;
+    printf("\nPushed %d onto the stack\n", value);
+}
+void pop() {
+    if (top == NULL) {
+        printf("Stack underflow! Cannot pop from an empty stack\n");
+        return;
+    }
+    struct Node* temp = top;
+    top = top->next;
+    printf("Popped %d from the stack\n", temp->data);
+    free(temp);
+}
+void display() {
+    if (top == NULL) {
+        printf("Stack is empty\n");
+        return;
+    }
+    printf("Stack elements: ");
+    struct Node* current = top;
+    while (current != NULL) {
+        printf("%d ", current->data);
+        current = current->next;
+    }
+    printf("\n");
+}
+void peek() {
+    if (top == NULL) {
+        printf("Stack is empty. Cannot peek\n");
+        return;
+    }
+    printf("Top element of the stack: %d\n", top->data);
+}
+int main() {
+	printf("\nname:pradeep");
+	printf("\nreg no:192324052");
+    push(10);
+    push(20);
+    push(30);
+    display();
+    peek();
+    pop();
+    display();
+    peek();
+    push(40);
+    display();
+    peek();
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-27 104442.png
