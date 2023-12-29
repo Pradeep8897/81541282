@@ -1,0 +1,86 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+
+int queue[MAX_SIZE];
+int front = -1;
+int rear = -1;
+
+void enqueue(int num) {
+    if (rear == MAX_SIZE - 1) {
+        printf("Queue is full. Cannot enqueue.\n");
+    } else if (front == -1 && rear == -1) {
+        rear = front = 0;
+        queue[rear] = num;
+    } else {
+        rear = rear + 1;
+        queue[rear] = num;
+    }
+
+    printf("\n%d enqueued successfully.\n", num);
+}
+
+void dequeue() {
+    if (front == -1 || rear == -1) {
+        printf("Queue is empty. Cannot dequeue.\n");
+    } else if (rear == front) {
+        printf("%d dequeued successfully.\n", queue[front]);
+        rear = front = -1;
+    } else {
+        printf("%d dequeued successfully.\n", queue[front]);
+        front++;
+    }
+}
+
+int isEmpty() {
+    return front == -1 || rear == -1;
+}
+
+int isFull() {
+    return rear == MAX_SIZE - 1;
+}
+
+void display() {
+    if (isEmpty()) {
+        printf("Queue is empty.\n");
+    } else {
+        printf("Queue elements: ");
+        for (int i = front; i <= rear; i++) {
+            printf("%d ", queue[i]);
+        }
+        printf("\n");
+    }
+}
+
+int peek() {
+    if (isEmpty()) {
+        printf("Queue is empty. Cannot peek.\n");
+        return -1;
+    }
+    return queue[front];
+}
+
+int getRear() {
+    if (isEmpty()) {
+        printf("Queue is empty. Cannot get rear.\n");
+        return -1;
+    }
+    return queue[rear];
+}
+
+int main() {
+	printf("\nname:pradeep");
+	printf("\nreg no:192324052");
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    display();
+
+    printf("Front (Peek): %d\n", peek());
+    printf("Rear: %d\n", getRear());
+
+    dequeue();
+    display();
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2023-12-29 135458.png
