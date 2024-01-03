@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_SIZE 100
+typedef struct {
+    int data[MAX_SIZE];
+    int top;
+} Stack;
+void initialize(Stack* stack) {
+    stack->top = -1;
+}
+int isEmpty(Stack* stack) {
+    return stack->top == -1;
+}
+int isFull(Stack* stack) {
+    return stack->top == MAX_SIZE - 1;
+}
+void push(Stack* stack, int element) {
+    if (isFull(stack)) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    stack->data[++stack->top] = element;
+}
+int pop(Stack* stack) {
+    if (isEmpty(stack)) {
+        printf("Stack Underflow\n");
+        return -1;
+    }
+    return stack->data[stack->top--];
+}
+void deleteMiddleElement(Stack* stack) {
+    int size = stack->top + 1;
+    int middle = (size + 1) / 2;
+    Stack tempStack;
+    initialize(&tempStack);
+    for (int i = 0; i < middle - 1; i++) {
+        push(&tempStack, pop(stack));
+    }
+    pop(stack);
+    while (!isEmpty(&tempStack)) {
+        push(stack, pop(&tempStack));
+    }
+}
+
+int main() {
+    Stack stack;
+    initialize(&stack);
+    push(&stack, 1);
+    push(&stack, 2);
+    push(&stack, 3);
+    push(&stack, 4);
+    push(&stack, 5);
+    printf("Original Stack: ");
+    for (int i = 0; i <= stack.top; i++) {
+        printf("%d ", stack.data[i]);
+    }
+    printf("\n");
+    deleteMiddleElement(&stack);
+    printf("Modified Stack: ");
+    for (int i = 0; i <= stack.top; i++) {
+        printf("%d ", stack.data[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2024-01-03 082249.png
