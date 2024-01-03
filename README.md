@@ -143,6 +143,10 @@ rear( )
 7.4 Implement CircularQueue using Linked List with following operations
 Enqueue( )
 
+7.5 Implement Stack using two queues
+
+7.6 Implement Queue using two Stacks 
+
 Day 8
 
 8.1 Implement Binary tree
