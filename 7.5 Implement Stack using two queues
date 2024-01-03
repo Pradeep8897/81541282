@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node {
+    int data;
+    struct Node* next;
+};
+struct Queue {
+    struct Node* front;
+    struct Node* rear;
+};
+struct Node* createNode(int data) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = data;
+    newNode->next = NULL;
+    return newNode;
+}
+struct Queue* createQueue() {
+    struct Queue* queue = (struct Queue*)malloc(sizeof(struct Queue));
+    queue->front = queue->rear = NULL;
+    return queue;
+}
+int isEmpty(struct Queue* queue) {
+    return (queue->front == NULL);
+}
+void enqueue(struct Queue* queue, int data) {
+    struct Node* newNode = createNode(data);
+    if (isEmpty(queue)) {
+        queue->front = queue->rear = newNode;
+    } else {
+        queue->rear->next = newNode;
+        queue->rear = newNode;
+    }
+}
+int dequeue(struct Queue* queue) {
+    if (isEmpty(queue)) {
+        printf("Queue is empty.\n");
+        return -1;
+    } else {
+        struct Node* temp = queue->front;
+        int data = temp->data;
+        queue->front = queue->front->next;
+        free(temp);
+        return data;
+    }
+}
+void push(struct Queue* queue1, struct Queue* queue2, int data) {
+    enqueue(queue1, data);
+}
+int pop(struct Queue* queue1, struct Queue* queue2) {
+    if (isEmpty(queue1)) {
+        printf("Stack is empty.\n");
+        return -1;
+    } else {
+        while (queue1->front->next != NULL) {
+            enqueue(queue2, dequeue(queue1));
+        }
+        int data = dequeue(queue1);
+        struct Queue* temp = queue1;
+        queue1 = queue2;
+        queue2 = temp;
+        return data;
+    }
+}
+int top(struct Queue* queue1, struct Queue* queue2) {
+    if (isEmpty(queue1)) {
+        printf("Stack is empty.\n");
+        return -1;
+    } else {
+        while (queue1->front->next != NULL) {
+            enqueue(queue2, dequeue(queue1));
+        }
+        int data = dequeue(queue1);
+        enqueue(queue2, data);
+        struct Queue* temp = queue1;
+        queue1 = queue2;
+        queue2 = temp;
+        return data;
+    }
+}
+int main() {
+    struct Queue* queue1 = createQueue();
+    struct Queue* queue2 = createQueue();
+    push(queue1, queue2, 1);
+    push(queue1, queue2, 2);
+    push(queue1, queue2, 3);
+    printf("Top element: %d\n", top(queue1, queue2));
+    printf("Popped element: %d\n", pop(queue1, queue2));
+    printf("Top element: %d\n", top(queue1, queue2));
+
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2024-01-03 133247.png
