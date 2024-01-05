@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define ALPHABET_SIZE 26
+struct TrieNode {
+    struct TrieNode* children[ALPHABET_SIZE];
+    int isEndOfWord;
+};
+struct TrieNode* createNode() {
+    struct TrieNode* newNode = (struct TrieNode*)malloc(sizeof(struct TrieNode));
+    newNode->isEndOfWord = 0;
+    for (int i = 0; i < ALPHABET_SIZE; i++) {
+        newNode->children[i] = NULL;
+    }
+    return newNode;
+}
+void insert(struct TrieNode* root, char* word) {
+    struct TrieNode* currentNode = root;
+    for (int i = 0; word[i] != '\0'; i++) {
+        int index = word[i] - 'a';
+        if (currentNode->children[index] == NULL) {
+            currentNode->children[index] = createNode();
+        }
+        currentNode = currentNode->children[index];
+    }
+    currentNode->isEndOfWord = 1;
+}
+int main() {
+    struct TrieNode* root = createNode();
+    insert(root, "hello");
+    insert(root, "world");
+    insert(root, "programming");
+    insert(root, "code");
+    return 0;
+}
