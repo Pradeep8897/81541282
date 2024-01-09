@@ -189,4 +189,4 @@ Day 13
  
 13.4 Implement a C Program to perform Bubble Sort
  
-9. Implement a C Program to perform Shell Sort
+13.5 Implement a C Program to perform Shell Sort
