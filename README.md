@@ -178,3 +178,15 @@ Day 12
 12.2 Implement a C Program for Min Heap and Max Heap and perform Insertion  of Nodes
   
 12.3  Implement a C Program to perform Heap sort both ascending and Descending order
+
+Day 13
+
+13.1 Implement a C Program to perform Merge Sort
+   
+13.2 Implement a C Program to perform Insertion Sort
+ 
+13.3 Implement a C Program to perform Radix Sort
+ 
+13.4 Implement a C Program to perform Bubble Sort
+ 
+9. Implement a C Program to perform Shell Sort
