@@ -1,0 +1,295 @@
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+#include <stdio.h>
+#define MAX_SIZE 100
+void initializeGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            graph[i][j] = 0;
+        }
+    }
+}
+void addEdge(int graph[MAX_SIZE][MAX_SIZE], int u, int v) {
+    graph[u][v] = 1;
+    graph[v][u] = 1;
+}
+void printGraph(int graph[MAX_SIZE][MAX_SIZE], int size) {
+    int i, j;
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            printf("%d ", graph[i][j]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    int size, i, j;
+    int graph[MAX_SIZE][MAX_SIZE];
+    printf("Enter the number of vertices in the graph: ");
+    scanf("%d", &size);
+    initializeGraph(graph, size);
+    printf("Enter the edges in the graph (u v):\n");
+    printf("(Enter -1 -1 to stop)\n");
+    while (1) {
+        scanf("%d %d", &i, &j);
+        if (i == -1 && j == -1) {
+            break;
+        }
+        addEdge(graph, i, j);
+    }
+    printf("\nGraph Matrix:\n");
+    printGraph(graph, size);
+    return 0;
+}
+C:\Users\kusha\Pictures\Screenshots\Screenshot 2024-01-12 122229.png
